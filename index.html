@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anima Animal — Pet Spiritual Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* 3-color palette: Parchment · Terracotta · Umber */
+    --cream: #FBF5EE;
+    --warm-white: #FEF9F4;
+    --sand: #F0E4D4;
+    --stone: #D9BFA4;
+    --warm-gray: #9C7E68;
+    --charcoal: #3D2314;
+    --deep: #241309;
+    --accent: #C4622D;
+    --accent-light: #D9936A;
+    --accent-pale: #F5DDD0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(251,245,238,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--sand);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--deep);
+    text-decoration: none;
+  }
+
+  .nav-logo span { font-style: italic; color: var(--accent); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  nav ul a {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--charcoal); }
+
+  .nav-book {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    background: var(--charcoal);
+    padding: 0.6rem 1.4rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-book:hover { background: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, #F5DDD0 0%, var(--cream) 70%);
+    z-index: 0;
+  }
+
+  .hero-ring {
+    position: absolute;
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    border: 1px solid var(--stone);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    animation: slowRotate 40s linear infinite;
+  }
+
+  .hero-ring-2 {
+    width: 720px; height: 720px;
+    border-color: var(--sand);
+    opacity: 0.25;
+    animation-duration: 60s;
+    animation-direction: reverse;
+  }
+
+  @keyframes slowRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1.2s 0.1s ease both;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--deep);
+    margin-bottom: 0.2rem;
+    animation: fadeUp 1.2s 0.2s ease both;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--warm-gray);
+    margin: 1.5rem 0 2.5rem;
+    animation: fadeUp 1.2s 0.3s ease both;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    background: var(--charcoal);
+    padding: 1rem 2.4rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    animation: fadeUp 1.2s 0.4s ease both;
+  }
+
+  .hero-cta:hover { background: var(--accent); transform: translateY(-1px); }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 3rem;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  .divider-line { flex: 1; height: 1px; background: var(--sand); }
+  .divider-mark { color: var(--stone); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
+
+  /* SECTIONS */
+  section { padding: 6rem 2rem; }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--deep);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 em { font-style: italic; color: var(--accent); }
+
+  .lead {
+    font-size: 1.05rem;
+    color: var(--warm-gray);
+    max-width: 580px;
+    margin-bottom: 3rem;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .symbol-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 1px solid var(--stone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .symbol-inner {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 1px solid var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .symbol-glyph {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--accent);
+    font-style: italic;
+    line-height: 1;
+  }
+
+  /* SERVICES */
+  .services-bg { background: var(--warm-white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+    background: var(--sand);
+  }
+
+  .service-card {
+    background: var(--warm-white);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+
+  .service-card:hover { background: var(--accent-pale); }
+
+  .service-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--accent);
+    font-style: italic;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--deep);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-price {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-top: 1px solid var(--sand);
+    padding-top: 1rem;
+  }
+
+  /* PROCESS */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--sand);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+
+  .step p {
+    font-size: 0.85rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-bg { background: #2A1208; }
+
+  .testimonials-bg h2,
+  .testimonials-bg .section-label { color: var(--sand); }
+
+  .testimonials-bg h2 em { color: var(--accent-light); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1.5rem;
+  }
+
+  .testimonial p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--stone);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .testimonial-attr {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  /* BOOKING */
+  .booking-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking-form {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-group label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--sand);
+    background: var(--warm-white);
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--accent); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .submit-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    background: var(--charcoal);
+    border: none;
+    padding: 1.1rem 2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover { background: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    background: var(--deep);
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--sand);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo em { font-style: italic; color: var(--accent-light); }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--stone); }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: #5C3A26;
+    letter-spacing: 0.05em;
+  }
+
+  /* CONFIRMATION */
+  .confirm-msg {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-symbol { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Anima <em>Animal</em></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+  </ul>
+  <a href="#booking" class="nav-book">Book a Session</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring hero-ring-2"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Pet Spiritual Services</p>
+    <h1>Anima<br><em>Animal</em></h1>
+    <p class="hero-subtitle">The soul of your companion, gently revealed</p>
+    <a href="#booking" class="hero-cta">Begin the Journey</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-label">Our Philosophy</span>
+        <h2>Every animal carries an <em>ancient soul</em></h2>
+        <p class="lead">Your pet arrived in your life for a reason. Through tarot, aura photography, and past life readings, we help you understand the deeper bond you share — and the wisdom your companion brings.</p>
+        <p style="font-size:0.92rem; color:var(--warm-gray); line-height:1.8;">Anima Animal was founded on the belief that animals are not just companions but spiritual guides in their own right. Each session is a gentle, reverent inquiry into the unseen life your pet carries with them — across time, across lifetimes.</p>
+      </div>
+      <div class="about-symbol">
+        <div class="symbol-circle">
+          <div class="symbol-inner">
+            <span class="symbol-glyph">A</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div><span class="divider-mark">✦</span><div class="divider-line"></div></div>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <span class="section-label">What We Offer</span>
+    <h2>Spiritual <em>Services</em></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">I</span>
+        <h3>Pet Tarot Reading</h3>
+        <p>A full card spread interpreted through your pet's energetic signature. Reveals personality archetypes, present emotional states, and guidance for your bond together.</p>
+        <div class="service-price">60 min — $130</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">II</span>
+        <h3>Aura Photography</h3>
+        <p>Using specialized Kirlian-inspired photography, we capture and interpret your pet's aura — the luminous energy field that reflects their emotional and spiritual health.</p>
+        <div class="service-price">30 min — $350</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">III</span>
+        <h3>Past Life Reading</h3>
+        <p>A meditative channeling session that explores what lives your animal companion may have lived before — and how those experiences shape who they are with you today.</p>
+        <div class="service-price">90 min — $200</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <span class="section-label">How It Works</span>
+    <h2>A gentle, <em>considered</em> process</h2>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Book your session</h4>
+        <p>Choose your service and submit a few details about your pet — name, species, any questions on your heart.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Prepare together</h4>
+        <p>You'll receive a brief guide on how to hold a calm, open intention in the days before your session.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>The reading</h4>
+        <p>Sessions are conducted in person or remotely via video. Your pet need not be present for remote readings.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Your record</h4>
+        <p>You'll receive a written summary and any imagery from your session within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials-bg">
+  <div class="section-inner">
+    <span class="section-label">Client Stories</span>
+    <h2>What companions <em>reveal</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>"The past life reading for our dog Miso described a life as a shepherd in Andalusia. It explained so much about his protectiveness and his particular love of open fields."</p>
+        <div class="testimonial-attr">— Renata L., Brooklyn</div>
+      </div>
+      <div class="testimonial">
+        <p>"I was skeptical, but the aura photograph of my cat showed a deep violet field around her head. The interpretation was so precise it made me cry."</p>
+        <div class="testimonial-attr">— Tom C., Asheville</div>
+      </div>
+      <div class="testimonial">
+        <p>"The tarot reading helped me understand why my rabbit, who I adopted after a loss, had come into my life at exactly that moment. Profound and tender."</p>
+        <div class="testimonial-attr">— Sara M., Portland</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="booking-inner">
+    <span class="section-label" style="text-align:center; display:block;">Reserve Your Session</span>
+    <h2 style="text-align:center;">Begin the <em>conversation</em></h2>
+    <p style="text-align:center; color:var(--warm-gray); font-size:0.95rem;">Fill out the form below and we'll be in touch within one business day to confirm your appointment.</p>
+
+    <form class="booking-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your name</label>
+          <input type="text" placeholder="First Last" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@email.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Pet's name</label>
+          <input type="text" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <label>Species</label>
+          <select required>
+            <option value="" disabled selected>Select one</option>
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Bird</option>
+            <option>Rabbit</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service</label>
+        <select required>
+          <option value="" disabled selected>Choose a service</option>
+          <option>Pet Tarot Reading — $130</option>
+          <option>Aura Photography — $350</option>
+          <option>Past Life Reading — $200</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Anything you'd like us to know</label>
+        <textarea placeholder="Questions, intentions, or anything on your heart..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Request Appointment</button>
+    </form>
+    <div class="confirm-msg" id="confirm">
+      Thank you. We'll be in touch soon to confirm your session.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Anima <em>Animal</em></div>
+  <p class="footer-tagline">The soul of your companion, gently revealed</p>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#booking">Book</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Anima Animal. All rights reserved.</p>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('confirm').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
