@@ -676,25 +676,25 @@
     <h2 style="text-align:center;">Begin the <em>conversation</em></h2>
     <p style="text-align:center; color:var(--warm-gray); font-size:0.95rem;">Fill out the form below and we'll be in touch within one business day to confirm your appointment.</p>
 
-    <form class="booking-form" action="https://formspree.io/f/xgopdzek" method="POST">
+    <form class="booking-form" action="https://formspree.io/f/xgopdzek" method="POST" enctype="application/x-www-form-urlencoded">
       <div class="form-row">
         <div class="form-group">
           <label>Your name</label>
-          <input type="text" placeholder="First Last" required>
+          <input type="text" name="name" placeholder="First Last" required>
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" placeholder="you@email.com" required>
+          <input type="email" name="email" placeholder="you@email.com" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>Pet's name</label>
-          <input type="text" placeholder="Name" required>
+          <input type="text" name="pet_name" placeholder="Name" required>
         </div>
         <div class="form-group">
           <label>Species</label>
-          <select required>
+          <select name="species" required>
             <option value="" disabled selected>Select one</option>
             <option>Dog</option>
             <option>Cat</option>
@@ -706,7 +706,7 @@
       </div>
       <div class="form-group">
         <label>Service</label>
-        <select required>
+        <select name="service" required>
           <option value="" disabled selected>Choose a service</option>
           <option>Pet Tarot Reading — $130</option>
           <option>Aura Photography — $350</option>
@@ -715,7 +715,7 @@
       </div>
       <div class="form-group">
         <label>Anything you'd like us to know</label>
-        <textarea placeholder="Questions, intentions, or anything on your heart..."></textarea>
+        <textarea name="message" placeholder="Questions, intentions, or anything on your heart..."></textarea>
       </div>
       <button type="submit" class="submit-btn">Request Appointment</button>
     </form>
